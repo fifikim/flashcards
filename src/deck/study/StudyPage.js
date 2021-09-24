@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * 
+ * @param {number} deckId
+ * @param {string} name - name of deck 
+ * @param children - StudyCard, next button
+ * @returns renders nav breadcrumb and Study components
+ */
 function StudyPage({ deckId, name, children }) {
   return (
     <main className="container study-page">

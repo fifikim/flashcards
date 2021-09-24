@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 
+/**
+ * 
+ * @param {object} props passed from parent route
+ * 
+ * @returns CardForm component for Add Card & Edit Card routes
+ */
 function CardForm({
-  onSubmit,
-  onDone,
-  initialState,
-  doneButtonLabel = "Done",
+  onSuccess,                  // form onSubmit handler
+  onCancel,                   // cancel button onClick handler
+  initialState,               // saved Card state (or blank)
+  doneButtonLabel = "Done",   // cancel button label
 }) {
   const [formData, setFormData] = useState({...initialState});
 
-  const handleInputChange = ({target}) => {
-    setFormData({
-      ...formData,
-      [target.name]: target.value
+  const handleInputChange = ({target}) => {  
+    setFormData({                            // saves form input in formData
+      ...formData,                           // state object as value of key
+      [target.name]: target.value            // matching input field name
     });
   };
 
-  function submitHandler(event) {
-    event.preventDefault();
-    onSubmit({ ...formData });
-    setFormData({...initialState});
+  function submitHandler(event) {    
+    event.preventDefault();          // calls onSuccess function (newCard or
+    onSuccess({ ...formData });      // editCard) depending on prop passed in
+    setFormData({...initialState});  // from parent route
   };
 
   return (
@@ -54,11 +60,11 @@ function CardForm({
       </div>
       
       <div className="mb-3">
-        <button type="button"  onClick={onDone} className="btn btn-secondary mr-2">
+        <button type="button"  onClick={onCancel} className="btn btn-secondary mr-2">
           {doneButtonLabel}
         </button>
         <button type="submit" className="btn btn-primary mr-2">
-          {submitHandler}
+          Submit
         </button>
       </div>
     </form>

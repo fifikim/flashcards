@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 
+/**
+ * 
+ * @param {object} props passed from parent route
+ * 
+ * @returns DeckForm component for Create Deck & Edit Deck routes
+ */
 function DeckForm({
-  onSuccess,
-  onCancel,
-  initialFormState = { name: "", description: "" },
+  onSuccess,          // form onSubmit handler
+  onCancel,           // cancel button onClick handler
+  initialFormState = { name: "", description: "" }, // saved deck state (or blank)
 }) {
   const [ formData, setFormData ] = useState({...initialFormState});
 
-  const handleInputChange = ({target}) => {
-    setFormData({
-      ...formData,
-      [target.name]: target.value
+  const handleInputChange = ({target}) => {  
+    setFormData({                            // saves form input in formData
+      ...formData,                           // state object as value of key 
+      [target.name]: target.value            // matching input field name
     });
   };
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    onSuccess(formData);
+  async function handleSubmit(event) { 
+    event.preventDefault();              // calls onSuccess function (newDeck 
+    event.stopPropagation();             // or editDeck) depending on prop 
+    onSuccess(formData);                 // passed in from parent route 
   };
 
   return (

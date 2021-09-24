@@ -3,16 +3,20 @@ import { Link, useHistory } from 'react-router-dom';
 import { createDeck } from '../utils/api';
 import DeckForm from './DeckForm';
 
+/**
+ * 
+ * @returns renders page view for Create Deck route
+ */
 const DeckNew = () => {
   const history = useHistory();
 
-  function submitHandler(deck) {
-    createDeck(deck).then((savedDeck) =>
-      history.push(`/decks/${savedDeck.id}`));
+  function newDeck(deck) {                      // onSuccess handler: updates  
+    createDeck(deck).then((savedDeck) =>        // deck via api post call  &   
+      history.push(`/decks/${savedDeck.id}`));  // redirects to Deck View page
   }
 
   function cancel() {
-    history.goBack();
+    history.push('/');  // cancel button redirects to home screen
   }
 
   return (
@@ -27,10 +31,12 @@ const DeckNew = () => {
           <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
         </ol>
       </nav>
+
       <h1>Create Deck</h1>
-      <DeckForm 
-        onCancel={cancel}
-        onSuccess={submitHandler}
+
+      <DeckForm                    
+        onCancel={cancel}         // create-specific props passed to DeckForm
+        onSuccess={newDeck}
       />
     </>
   );

@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * 
+ * @param {number} deckId 
+ * @param {number} cardCount - total number of cards in deck
+ * @returns renders message on StudyPage if less than 3 cards in deck
+ */
 function StudyNotEnoughCards({ deckId, cardCount }) {
   return (
     <>

@@ -23,13 +23,6 @@
       "id": 6
     },
     {
-      "id": 7,
-      "front": "fgfgf",
-      "back": "gfgff",
-      "name": "dfdfd update",
-      "description": "update"
-    },
-    {
       "name": "Ted ",
       "description": "lil bear",
       "id": 8
@@ -116,22 +109,10 @@
       "id": 19
     },
     {
-      "front": "d333",
+      "front": "d333 update",
       "back": "wewe",
       "deckId": 5,
       "id": 21
-    },
-    {
-      "front": "dfdfd",
-      "back": "gfgfgf",
-      "deckId": 6,
-      "id": 22
-    },
-    {
-      "front": "dfdfd",
-      "back": "fdfdfd",
-      "deckId": 7,
-      "id": 23
     },
     {
       "front": "dfdf",
@@ -144,6 +125,13 @@
       "back": "bar",
       "deckId": 8,
       "id": 25
+    },
+    {
+      "cards": [],
+      "front": "dfdf",
+      "back": "dfdf",
+      "deckId": 6,
+      "id": 26
     }
   ]
 }

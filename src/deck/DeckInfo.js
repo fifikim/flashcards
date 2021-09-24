@@ -2,13 +2,17 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { deleteDeck } from '../utils/api';
 
+/**
+ * @param {object} deck saved as state in parent Deck View route
+ * @returns renders deck info & button bar on Deck View page
+ */
 const DeckInfo = ({deck}) => {
   const history = useHistory();
 
-  async function handleDelete(event) {
-    event.preventDefault();
-    const ac = new AbortController();
-
+  async function handleDelete(event) {  // delete onClick handler: displays
+    event.preventDefault();             // confirmation prompt. if confirmed, 
+    const ac = new AbortController();   // sends api delete call & redirects to home
+                                        
     const result = window.confirm(`Delete this deck?\n\nYou will not be able to recover it.`);
     if (result) {
       await deleteDeck(deck.id, ac.signal);

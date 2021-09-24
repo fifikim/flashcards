@@ -3,19 +3,25 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import { readDeck, createCard } from '../utils/api';
 import CardForm from './CardForm';
 
-function CardNew () {
+/**
+ * 
+ * @returns renders page view for Add Card route
+ */
+function CardNew() {
+  const { deckId } = useParams();     // sets deckId from URL param
   const history = useHistory();
-  const { deckId } = useParams();
   const [deck, setDeck] = useState({ cards: [] });
 
-  useEffect(() => {
-    readDeck(deckId).then(setDeck);
-  }, [deckId]);
+  useEffect(() => {                 // fetches deck info from api & saves to 
+    readDeck(deckId).then(setDeck); // deck state
+  }, [deckId]);                     // re-renders when deckId is changed
   
-  function submitHandler(card) {
-    createCard(deckId, card);
+  async function newCard(card) {    // onSuccess handler: creates card via api
+    await createCard(deckId, card); // post call & redirects to Deck View page
+    history.push(`/decks/${deckId}`); 
   }
-  function doneHandler() {
+
+  function cancel() {             // cancel button redirects to Deck View page
     history.push(`/decks/${deckId}`);
   }
   return (
@@ -31,10 +37,10 @@ function CardNew () {
       <h2>{deck.name}: Add Card</h2>
 
       <CardForm 
-        deckName={deck.name}
+        deckName={deck.name}    // create-specific props passed to CardForm
         initialState={deck}
-        onSubmit={submitHandler}
-        onDone={doneHandler}
+        onSuccess={newCard}
+        onCancel={cancel}
       />
     </>
   );

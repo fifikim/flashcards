@@ -1,11 +1,21 @@
 import React from 'react';
-import DeckPreview from '../deck/DeckPreview';
+import { Link } from 'react-router-dom';
+import DeckPreview from './DeckPreview';
 
+/**
+ * 
+ * @returns renders create deck button & DeckPreview component on Home page 
+ */
 const Home = () => {
     return (
-        <div className="Home container">
-            <DeckPreview />
-        </div>
+        <>  
+            <Link to="/decks/new" className="btn btn-secondary">
+                <span className="oi oi-plus" /> Create Deck         
+            </Link>
+            <div className="Home container">
+                <DeckPreview />
+            </div>
+        </>
     )
 }
 

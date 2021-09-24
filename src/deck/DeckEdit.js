@@ -3,30 +3,34 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import { readDeck } from '../utils/api';
 import DeckForm from './DeckForm';
 
+/**
+ * 
+ * @returns page view for Edit Deck route
+ */
 function DeckEdit() {
   const history = useHistory();
-  const { deckId } = useParams();
-  const [deck, setDeck] = useState({ name: "", description: ""});
+  const { deckId } = useParams(); // sets deckId based on URL param
+  const [deck, setDeck] = useState({ name: "", description: ""}); 
   
   useEffect(() => {
-    readDeck(deckId).then(setDeck);
-  }, [deckId]);
+    readDeck(deckId).then(setDeck);  // fetches deck from api & saves to state
+  }, [deckId]);  // re-renders each time deckId is changed
 
-  function editDeck(updateDeck) {
-    updateDeck(updateDeck).then((savedDeck) =>
-      history.push(`/decks/${savedDeck.id}`)
+  function editDeck(updateDeck) {              // onSuccesss handler: updates  
+    updateDeck(updateDeck).then((savedDeck) => // deck via api put call &  
+      history.push(`/decks/${savedDeck.id}`)   // redirects to Deck View page
     );
   }
 
-  function cancel() {
-    history.goBack();
+  function cancel() {   // cancel button redirects to Deck View page
+    history.push(`/decks/${deckId}`); 
   }
 
-  const child = deck.id ? (
-    <DeckForm 
-      onCancel={cancel}
+  const child = deck.id ? (   // conditional render: renders DeckForm if state 
+    <DeckForm                 // contains value of deck.id, otherwise will 
+      onCancel={cancel}       // display "Loading" message
       initialFormState={deck}
-      onSuccess={editDeck}
+      onSuccess={editDeck}    // edit-specific props passed to Deck Form 
     />
   ) : (
     <p>Loading...</p>
@@ -47,8 +51,10 @@ function DeckEdit() {
           <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
         </ol>
       </nav>
+
       <h1>Edit Deck</h1>
       {child}
+
     </>
   );
 };
