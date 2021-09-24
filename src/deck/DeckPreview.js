@@ -59,44 +59,6 @@ const DeckPreview = () => {
       <ul className="list-group mt-2 deck-list">{list}</ul>
     </>
   );
-  // return (
-  //   <div key={deck.id} className="card my-2">
-
-  //     <div className="card-heading mx-3">
-  //       <h2>{deck.name}</h2>
-  //       <p>{deck.cards.length} cards</p>
-  //     </div>
-
-  //     <div className="card-body">
-  //       {deck.description}
-  //     </div>
-
-  //     <div id="buttonRow" className="d-flex justify-content-between">
-  //       <div className="my-3">
-  //         <Link to={`/decks/${deck.id}`}>
-  //         <button type="button" className="btn btn-secondary ml-3">
-  //           <span className="oi oi-eye mr-2"></span>
-  //           View
-  //           </button>
-  //         </Link>
-  //         <Link to={`/decks/${deck.id}/study`}>
-  //           <button type="button" className="btn btn-primary">
-  //             <span className="oi oi-book mr-2"></span> 
-  //             Study
-  //           </button>
-  //         </Link>
-  //         </div>
-  //       <div>
-  //         <Link to="/">
-  //           <button type="button" className="btn btn-danger m-3" onClick={handleDelete}>
-  //             <span className="oi oi-trash"></span>
-  //           </button>
-  //         </Link>
-  //       </div>
-  //     </div>
-
-  //   </div>
-  // )
 }
 
 export default DeckPreview;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { deleteDeck } from '../utils/api';
 
-const DeckInfo = ({name, description, deckId, deck}) => {
+const DeckInfo = ({deck}) => {
   const history = useHistory();
 
   async function handleDelete(event) {
@@ -18,8 +18,8 @@ const DeckInfo = ({name, description, deckId, deck}) => {
 
   return (
     <div className="mb-4">
-      <h5>{name}</h5>
-      <p>{description}</p>
+      <h5>{deck.name}</h5>
+      <p>{deck.description}</p>
       <div id="buttonRow" className="d-flex justify-content-between">
         <div>
           <Link to={`/decks/${deck.id}/edit`}>

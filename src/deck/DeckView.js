@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { readDeck, deleteCard } from '../utils/api';
 import CardPreview from '../card/CardPreview';
 import DeckInfo from './DeckInfo';
@@ -7,8 +7,6 @@ import DeckInfo from './DeckInfo';
 const DeckView = () => {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({ cards: [] });
-  // const [cards, setCards] = useState([]);
-  const history = useHistory();
   
   useEffect(fetchDeck, [deckId]);
   function fetchDeck() {
@@ -26,7 +24,6 @@ const DeckView = () => {
     };
   }
 
-  // const cardsList = cards.map((card, index) => <CardPreview key={index} card={card} handleDelete={handleDelete} />);
   return (
     <main className="container deck-view">
       <nav aria-label="breadcrumb">
@@ -47,12 +44,6 @@ const DeckView = () => {
         deckId={deckId} 
         deck={deck}
       />
-      {/* <div className="my-6">
-        <h3>Cards</h3>
-        <div>
-          {cardsList}
-        </div>
-      </div> */}
       <CardPreview deck={deck}  onCardDelete={deleteCardHandler} />
     </main>
   );

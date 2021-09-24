@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 function CardForm({
   onSubmit,
   onDone,
-  deckName = "Loading...",
   initialState,
   doneButtonLabel = "Done",
 }) {
@@ -29,7 +28,6 @@ function CardForm({
           Front: 
         </label>
         <textarea 
-          // placeholder={initialState.front}
           value={formData.front}
           onChange={handleInputChange}
           name="front"
@@ -59,11 +57,6 @@ function CardForm({
         <button type="button"  onClick={onDone} className="btn btn-secondary mr-2">
           {doneButtonLabel}
         </button>
-        {/* <Link to={`/decks/${deckId}`}>
-          <button type="button" className="btn btn-secondary mr-2">
-            {buttonType}
-          </button>
-        </Link> */}
         <button type="submit" className="btn btn-primary mr-2">
           {submitHandler}
         </button>
