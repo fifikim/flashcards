@@ -63,11 +63,28 @@
       "id": 5
     },
     {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
+      "front": "what is a demo card?",
+      "back": "this card has no content",
+      "deckId": 3,
       "id": 7
+    },
+    {
+      "front": "what is a demo card?",
+      "back": "this card has no content",
+      "deckId": 4,
+      "id": 8
+    },
+    {
+      "front": "what is a demo card?",
+      "back": "this card has no content",
+      "deckId": 5,
+      "id": 9
+    },
+    {
+      "front": "what is a demo card?",
+      "back": "this card has no content",
+      "deckId": 6,
+      "id": 10
     }
   ]
 }
