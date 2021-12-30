@@ -41,12 +41,12 @@ function DeckEdit() {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">
+            <Link id="link" to="/">
               <span className="oi oi-home mr-1" />Home
             </Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to={`/decks/${deckId}`}>{deck.name}</Link>
+            <Link id="link" to={`/decks/${deckId}`}>{deck.name}</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
         </ol>

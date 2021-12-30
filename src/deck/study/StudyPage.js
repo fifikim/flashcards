@@ -14,12 +14,12 @@ function StudyPage({ deckId, name, children }) {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">
+            <Link id="link" to="/">
               <span className="oi oi-home" /> Home
             </Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to={`/decks/${deckId}`}>{name}</Link>
+            <Link id="link" to={`/decks/${deckId}`}>{name}</Link>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
             Study

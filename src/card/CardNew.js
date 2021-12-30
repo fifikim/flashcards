@@ -28,8 +28,8 @@ function CardNew() {
     <>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><Link to="/"><span className="oi oi-home mr-1"></span>Home</Link></li>
-          <li className="breadcrumb-item"><Link to={`/decks/${deckId}`}>{deck.name}</Link></li>
+          <li className="breadcrumb-item"><Link id="link" to="/"><span className="oi oi-home mr-1"></span>Home</Link></li>
+          <li className="breadcrumb-item"><Link id="link" to={`/decks/${deckId}`}>{deck.name}</Link></li>
           <li className="breadcrumb-item active" aria-current="page">Add Card</li>
         </ol>
       </nav>

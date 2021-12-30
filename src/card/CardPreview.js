@@ -13,14 +13,14 @@ const CardPreview = ({deck, onCardDelete}) => {
       key={card.id}
       className="list-group-item list-group-item-action flex-column align-items-start"
     >
-      <div className="row">
-        <div className="col-md-10">
-          <div className="row">
-            <div className="col">
+      <div className="row my-3">
+            <div className="col-6">
               {card.front}
             </div>
-            <div className="col">
-              {card.back}
+            <div className="col-6">
+              <div className="mb-3">
+                {card.back}
+              </div>
               <div className="col text-right">
                 <Link
                   to={`/decks/${deck.id}/cards/${card.id}/edit`}
@@ -34,11 +34,10 @@ const CardPreview = ({deck, onCardDelete}) => {
                     className="oi oi-trash"
                     onClick={() => onCardDelete(card.id)}
                   />
+                  Delete
                 </button>
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </li>
   ));

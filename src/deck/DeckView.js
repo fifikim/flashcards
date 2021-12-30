@@ -29,11 +29,11 @@ const DeckView = () => {
   }
 
   return (
-    <main className="container deck-view">
+    <main className="container deck-view p-3" id="white">
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">
+            <Link id="link" to="/">
               <span className="oi oi-home mr-1" /> Home
             </Link>
           </li>

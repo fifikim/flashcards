@@ -1,0 +1,35 @@
+#header {
+  font-family: 'Permanent Marker', cursive;
+}
+
+#link {
+  color:rgb(220, 7, 160);
+}
+
+body {
+  background-color: rgb(247, 221, 75);
+}
+
+#white {
+  background-color: white;
+}
+
+.btn-success {
+  background-color: gold;
+  color:chocolate
+}
+
+.btn-primary {
+  background-color:rgb(5, 232, 232);
+  color:darkblue
+}
+
+.btn-secondary {
+  background-color:lightgreen;
+  color:darkgreen
+}
+
+.btn-danger {
+  background-color:rgb(252, 88, 127);
+  color:darkred
+}

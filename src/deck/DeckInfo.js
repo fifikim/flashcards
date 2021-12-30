@@ -21,10 +21,10 @@ const DeckInfo = ({deck}) => {
   }
 
   return (
-    <div className="mb-4">
-      <h5>{deck.name}</h5>
-      <p>{deck.description}</p>
-      <div id="buttonRow" className="d-flex justify-content-between">
+    <div className="container mb-4 p-3 text-center">
+      <h2>{deck.name}</h2>
+      <h5>{deck.description}</h5>
+      <div id="buttonRow" className="mt-3 px-4 d-flex justify-content-between">
         <div>
           <Link to={`/decks/${deck.id}/edit`}>
             <button type="button" className="btn btn-secondary mr-2">
@@ -33,7 +33,7 @@ const DeckInfo = ({deck}) => {
             </button>
           </Link>
           <Link to={`/decks/${deck.id}/study`}>
-            <button type="button" className="btn btn-primary mr-2">
+            <button type="button" className="btn btn-success mr-2">
               <span className="oi oi-book mr-1"></span>
               Study
             </button>
@@ -49,6 +49,7 @@ const DeckInfo = ({deck}) => {
           <Link to="">
             <button type="button" className="btn btn-danger" onClick={handleDelete}>
               <span className="oi oi-trash"></span>
+              Delete 
             </button>
           </Link>
         </div>

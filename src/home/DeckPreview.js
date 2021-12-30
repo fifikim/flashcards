@@ -26,14 +26,14 @@ const DeckPreview = () => {
   const list = decks.map((deck) => (    // maps each deck in decks to jsx render
     <div
       key={deck.id}
-      className="col-12 col-md-6 my-2 align-self-stretch"
+      className="col-12 col-md-6 p-3 align-self-stretch"
     >
-      <article className="border rounded p-4 h-100">
+      <article className="border rounded p-4 h-100 p-3" id="white">
         <div className="d-flex w-100 justify-content-between">
-          <h5 className="mb-1">{deck.name}</h5>
+          <h3 className="mb-3">{deck.name}</h3>
           <small>{deck.cards.length} cards</small>
         </div>
-        <p className="mb-1">{deck.description}</p>
+        <p className="mb-3">{deck.description}</p>
         <Link
           to={`/decks/${deck.id}`}
           className="btn btn-secondary mr-2"
@@ -54,6 +54,7 @@ const DeckPreview = () => {
           onClick={() => deleteHandler(deck.id)}
         >
           <span className="oi oi-trash" />
+           Delete
         </button>
       </article>
     </div>

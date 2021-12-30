@@ -9,6 +9,26 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
+    },
+    {
+      "name": "React Hooks",
+      "description": "Hooks let you use state and other React features without writing a class.",
+      "id": 3
+    },
+    {
+      "name": "Nesting Components",
+      "description": "You can nest and refer to React components in the definition of a different component.",
+      "id": 4
+    },
+    {
+      "name": "React State",
+      "description": "State is similar to props, but it is private and fully controlled by the component.",
+      "id": 5
+    },
+    {
+      "name": "Conditional Rendering",
+      "description": "There are several ways to inline conditions in JSX without using if operators.",
+      "id": 6
     }
   ],
   "cards": [
